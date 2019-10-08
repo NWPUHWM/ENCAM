@@ -201,40 +201,40 @@ class ENCAM(nn.Module):
 
 def model_5():
     models=ENCAM()
-    models.load_state_dict(torch.load('ENCAM_008SIGMA005.pth',map_location='cuda:0'))
+    models.load_state_dict(torch.load('ENCAM_SIGMA005.pth',map_location='cuda:0'))
     models.cuda()
     models.eval()
     return models
 
 def model_25():
     models=ENCAM()
-    models.load_state_dict(torch.load('ENCAM_005SIGMA025.pth',map_location='cuda:0'))
+    models.load_state_dict(torch.load('ENCAM_SIGMA025.pth',map_location='cuda:0'))
     models.cuda()
     models.eval()
     return models
 
 def model_50():
     models=ENCAM()
-    models.load_state_dict(torch.load('ENCAM_009SIGMA050.pth',map_location='cuda:0'))
+    models.load_state_dict(torch.load('ENCAM_SIGMA050.pth',map_location='cuda:0'))
     models.cuda()
     models.eval()
     return models
 def model_75():
     models=ENCAM()
-    models.load_state_dict(torch.load('ENCAM_010SIGMA075.pth',map_location='cuda:0'))
+    models.load_state_dict(torch.load('ENCAM_SIGMA075.pth',map_location='cuda:0'))
     models.cuda()
     models.eval()
     return models
 def model_100():
     models=ENCAM()
-    models.load_state_dict(torch.load('ENCAM_014SIGMA100.pth',map_location='cuda:0'))
+    models.load_state_dict(torch.load('ENCAM_SIGMA100.pth',map_location='cuda:0'))
     models.cuda()
     models.eval()
     return models
 def model_real():
     # 'model_mnet6RES_048SIGMA055.pth', map_location = 'cuda:0
     models=ENCAM()
-    models.load_state_dict(torch.load('ENCAM_rand_065SIGMA075.pth',map_location='cuda:0'))
+    models.load_state_dict(torch.load('ENCAM_rand_SIGMA075.pth',map_location='cuda:0'))
     models.cuda()
     models.eval()
     return models
@@ -242,7 +242,7 @@ def model_real():
 def tests(tests,model):
     tests=np.array(tests)
 
-    tests=tests.reshape(200,200,93)
+    tests=tests.reshape(200,200,191)
 
     k=15
     cs = tests.shape[2]
