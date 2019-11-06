@@ -8,5 +8,8 @@ Matlab demo code and python code for ENCAM <br />
 # Requirements
 
 1.Python3
+
 2.PyTorch >= 1.0.0
+
 3.Matlab 2018a with pyversion python 3.7
+
