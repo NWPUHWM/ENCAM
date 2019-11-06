@@ -102,9 +102,9 @@ class Denoising_Block(nn.Module):
         return out
 
 
-class NCB(nn.Module):
+class NCU(nn.Module):
     def __init__(self, inchannels, outchannels, grid=[4, 4]):
-        super(NCB, self).__init__()
+        super(NCU, self).__init__()
         self.ca1 = ChannelAttention(inchannels)
         self.encab = RegionNONLocalBlock(inchannels, grid=grid)
         self.conv = conv_relu(inchannels, outchannels)
@@ -131,12 +131,12 @@ class ENCAM(nn.Module):
         self.f3d_1 = nn.Conv3d(1, 16, (30, 3, 3), 1, (0, 1, 1))
         self.f3d_2 = nn.Conv3d(1, 16, (30, 7, 7), 1, (0, 3, 3))
 
-        self.NCB_1 = NCB(channels, channels, grid=[6, 6])
-        self.NCB_2 = NCB(channels, channels, grid=[4, 4])
-        self.NCB_3 = NCB(channels, channels, grid=[2, 2])
-        self.NCB_4 = NCB(channels, channels, grid=[2, 2])
-        self.NCB_5 = NCB(channels, channels, grid=[4, 4])
-        self.NCB_6 = NCB(channels, channels, grid=[6, 6])
+        self.NCU_1 = NCU(channels, channels, grid=[6, 6])
+        self.NCU_2 = NCU(channels, channels, grid=[4, 4])
+        self.NCU_3 = NCU(channels, channels, grid=[2, 2])
+        self.NCU_4 = NCU(channels, channels, grid=[2, 2])
+        self.NCU_5 = NCU(channels, channels, grid=[4, 4])
+        self.NCU_6 = NCU(channels, channels, grid=[6, 6])
 
         self.Dblock1 = Denoising_Block()
         self.Dblock2 = Denoising_Block()
