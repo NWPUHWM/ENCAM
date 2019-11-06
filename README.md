@@ -12,4 +12,3 @@ Matlab demo code and python code for ENCAM <br />
 * PyTorch >= 1.0.0
 
 * Matlab 2018a with pyversion python 3.7
-
